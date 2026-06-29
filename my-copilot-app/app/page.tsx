@@ -6,6 +6,7 @@ import {
   CopilotChat,
   useConfigureSuggestions,
   useAgent,
+  useComponent,
 } from "@copilotkit/react-core/v2";
 import { z } from "zod";
 
@@ -230,6 +231,13 @@ const Chat = () => {
     ],
     available: "always",
   });
+
+  useComponent({
+    name: "showMyName",
+    description:"Show the user's name in a card",
+    parameters:z.object({name: z.string()}),
+    render: ({name})=><div className="bg-blue-500 p-4">Hi, {name}!</div>,
+  })
 
   return (
     <div className="flex flex-col justify-center items-center h-full w-full p-4 md:p-8">
