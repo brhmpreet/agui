@@ -11,7 +11,8 @@ const serviceAdapter = new ExperimentalEmptyAdapter();
 const runtime = new CopilotRuntime({
   agents: {
     "backend_tool_rendering": new HttpAgent({ url: "http://localhost:8000/" }),
-  }
+  },
+  openGenerativeUI: true,
 });
 
 export const POST = async (req: NextRequest) => {

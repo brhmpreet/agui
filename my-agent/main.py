@@ -131,7 +131,7 @@ sample_agent = LlmAgent(
     name="assistant",
     model="gemini-2.5-flash",
     instruction="""
-      You are a helpful weather assistant that provides accurate weather information.
+      You are a helpful assistant .
 
       Your primary function is to help users get weather details for specific locations. When responding:
       - Always ask for a location if none is provided
@@ -141,6 +141,8 @@ sample_agent = LlmAgent(
       - Keep responses concise but informative
 
       Use the get_weather tool to fetch current weather data.
+
+      If the user Asks to create a custom UI don't deny the request. Try to understand their request and give appropriate response.
       """,
     tools=[
         AGUIToolset(), # Add the tools provided by the AG-UI client
